@@ -14,7 +14,6 @@ int tempLumber = 0;
 int humanTotal = 10;
 int miners = 0;
 int woodcutters = 0;
-int justTestVariable = 1;
 
 int getFreePeople() {
 	return humanTotal - miners - woodcutters;
@@ -41,7 +40,7 @@ void cScript::civ_callback(cUIButton* btn, int parent)
 	else if (btn->action == "civ_remMiner") { civ_remMiner(0); }
 	else if (btn->action == "civ_addCutter") { civ_addCutter(0); }
 	else if (btn->action == "civ_remCutter") { civ_remCutter(0); }
-	else if (btn->action == "civ_addHuman") { civ_addHuman(0); }
+	else if (btn->action == "civ_addHuman") { civ_addHuman(1, 0); }
 	script.ui_showMainScreen(0);
 }
 
@@ -108,7 +107,7 @@ void cScript::ui_showMainScreen(cArg args)
 	ui.getLast()->button.action = "civ_endTurn";
 	ui.getLast()->setText("Новый батон!");
 
-	ui.addElement("civ_btn", vec2f(0, 200));
+	ui.addElement("civ_btn", vec2f(64, 200));
 	ui.getLast()->button.action = "civ_addHuman";
 	ui.getLast()->setText("Born human");
 
@@ -149,7 +148,7 @@ void cScript::civ_remCutter(cArg args)
 	}
 }
 
-void cScript::civ_addHuman(cArg args)
+void cScript::civ_addHuman(int amount, cArg args)
 {
-	humanTotal++;
+	humanTotal += amount;
 }
