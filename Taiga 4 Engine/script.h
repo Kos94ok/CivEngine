@@ -1,6 +1,7 @@
 
 #pragma once
 #include "util.h"
+#include "UI.h"
 
 class cScript
 {
@@ -39,6 +40,14 @@ public:
 	static void unit_torch(cArg args);
 	static void unit_flashlight(cArg args);
 	static void unit_bindToMouse(cArg args);
+
+	static void civ_endTurn(cArg args);
+	static void civ_addMiner(cArg args);
+	static void civ_remMiner(cArg args);
+	static void civ_addCutter(cArg args);
+	static void civ_remCutter(cArg args);
+	static void civ_callback(cUIButton* btn, int parent);
+	static void ui_showMainScreen(cArg args);
 };
 
 extern cScript script;

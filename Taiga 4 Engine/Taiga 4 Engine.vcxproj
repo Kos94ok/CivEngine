@@ -103,7 +103,8 @@
       </Command>
     </PreBuildEvent>
     <PostBuildEvent>
-      <Command>del "$(ProjectDir)Release\macro.obj"</Command>
+      <Command>
+      </Command>
     </PostBuildEvent>
     <Bscmake>
       <PreserveSbr>true</PreserveSbr>
@@ -168,6 +169,7 @@
     <ClCompile Include="refSystem_main.cpp" />
     <ClCompile Include="saveload_main.cpp" />
     <ClCompile Include="saveload_util.cpp" />
+    <ClCompile Include="script_civ.cpp" />
     <ClCompile Include="script_main.cpp" />
     <ClCompile Include="script_data.cpp" />
     <ClCompile Include="server_history.cpp" />

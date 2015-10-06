@@ -353,7 +353,7 @@ void gameLogicMain()
 			{
 				gamelogic.updateOrders(elapsedTime);
 				gamelogic.updateUnits(elapsedTime);
-				gamelogic.updateParticles(elapsedTime);
+				//gamelogic.updateParticles(elapsedTime);
 				gamelogic.updateSurvivalStats(elapsedTime);
 			}
 

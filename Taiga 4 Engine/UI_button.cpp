@@ -262,6 +262,10 @@ void cUIButton::callbackLeft(int parent)
 	{
 		core.shutdown = true;
 	}
+	else
+	{
+		script.civ_callback(this, parent);
+	}
 }
 
 void cUIButton::callbackRight(int parent)

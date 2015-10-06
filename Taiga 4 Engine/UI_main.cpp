@@ -51,7 +51,7 @@ void cUI::removeElementsByRef(int ref, float time)
 {
 	for (int i = 0; i < LIMIT_UI_ELEMENTS; i++)
 	{
-		if (element[i].hasRef(ref))
+		if (element[i].hasRef(ref) || ref == -1)
 		{
 			if (time <= 0.00f) { element[i].isValid = false; element[i].resetFadeTimer(); }
 			else { element[i].setFadeTimer(time, FADE_OUT); }
@@ -72,6 +72,12 @@ int cUI::getElementId(int id)
 	}
 	lastCalledElement = -1;
 	return -1;
+}
+
+// Get last created UI element
+cUIElement* cUI::getLast()
+{
+	return &element[ui.lastCreatedElement];
 }
 
 bool cUIElement::hasText() { return (text.length() > 0); }

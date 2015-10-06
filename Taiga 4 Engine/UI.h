@@ -175,13 +175,14 @@ public:
 	sf::Vector2i mouseLastPos;
 
 	// Elements
-	int addElement(std::string type, sf::Vector2f pos);
+	int addElement(string type, sf::Vector2f pos);
 	int addElement(cUIElement elem, sf::Vector2f pos);
 	int findByRef(int ref);
 	void removeElement(int id, float time = 0.00f);
 	void removeElementsByRef(int ref, float time = 0.00f);
 	void setFadeTimeByRef(int ref, float time, int type);
 	int getElementId(int id);
+	cUIElement* getLast();
 
 	// Update
 	cMutex access;

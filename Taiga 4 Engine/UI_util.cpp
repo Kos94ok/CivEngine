@@ -108,7 +108,7 @@ int cUI::createText(sf::Vector2f pos, string str, string tip, int ref)
 {
 	sf::Text brushText;
 	sf::FloatRect floatRect;
-	int id = ui.addElement("text", sf::Vector2f(math.round(pos.x), math.round(pos.y)));
+	int id = ui.addElement("civ_text", sf::Vector2f(math.round(pos.x), math.round(pos.y)));
 	ui.element[ui.getElementId(id)].setText(str);
 	ui.element[ui.getElementId(id)].textSize = 24;
 	ui.element[ui.getElementId(id)].ignoreOrigin = true;

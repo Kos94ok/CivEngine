@@ -408,6 +408,9 @@
     <ClCompile Include="util_file.cpp">
       <Filter>Файлы исходного кода\Util</Filter>
     </ClCompile>
+    <ClCompile Include="script_civ.cpp">
+      <Filter>Файлы исходного кода\Script</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="console.h">

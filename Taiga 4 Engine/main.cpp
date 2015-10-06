@@ -145,7 +145,8 @@ int main(int argc, char* argv[])
 	}
 	// Creating the menu
 	else {
-		script.ui_initialMenu(NULL);
+		script.ui_showMainScreen(NULL);
+		//script.ui_initialMenu(NULL);
 		audio.playMusic(MUSIC_MENU);
 	}
 	game.access.unlock();

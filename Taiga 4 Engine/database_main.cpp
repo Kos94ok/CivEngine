@@ -68,6 +68,24 @@ void cDatabase::loadUI()
 	uiElement[i].textureHovered = uiElement[i].texture;
 	i += 1;
 
+	uiElement[i] = getUIElement("text");
+	uiElement[i].type = "civ_text";
+	uiElement[i].textColor = color(255, 255, 255);
+	uiElement[i].textSize = 12;
+	uiElement[i].textFont = FONT_DESCR;
+	i += 1;
+
+	uiElement[i].type = "civ_btn";
+	uiElement[i].size = vec2(256.00f, 32.00f);
+	uiElement[i].setText("NO TEXT");
+	uiElement[i].texture = visual.addTexture("black.png");
+	uiElement[i].textureHovered = visual.addTexture("black.png");
+	uiElement[i].textColor = color(255, 255, 255);
+	uiElement[i].textColorHover = color(0, 255, 255);
+	uiElement[i].addRef(REF_UI_BUTTON);
+	uiElement[i].button.action = "noAction";
+	i += 1;
+
 
 	uiElement[i].type = "icon_health";
 	uiElement[i].size = vec2(64, 64);
