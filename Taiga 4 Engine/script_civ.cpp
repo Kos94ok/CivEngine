@@ -101,7 +101,7 @@ void cScript::ui_showMainScreen(cArg args)
 
 	ui.addElement("civ_btn", vec2f(300.00f, 300.00f));
 	ui.getLast()->button.action = "civ_endTurn";
-	ui.getLast()->setText("Закончить ход");
+	ui.getLast()->setText("????????? ???");
 
 	ui.addElement("civ_btn", vec2f(0, 200));
 	ui.getLast()->button.action = "civ_addHuman";
