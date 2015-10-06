@@ -183,7 +183,7 @@ void cScript::ui_showMainScreen(cArg args)
 void cScript::civ_addMiner(cArg args)
 {
 	if (getFreePeople() > 0) {
-		miners += 1;
+		miners += max(1, getFreePeople() / 10);
 	}
 }
 
@@ -197,7 +197,7 @@ void cScript::civ_remMiner(cArg args)
 void cScript::civ_addCutter(cArg args)
 {
 	if (getFreePeople() > 0) {
-		woodcutters += 1;
+		woodcutters += max(1, getFreePeople() / 10);
 	}
 }
 
