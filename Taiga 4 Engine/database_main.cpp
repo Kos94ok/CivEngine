@@ -83,6 +83,7 @@ void cDatabase::loadUI()
 	uiElement[i].textColor = color(255, 255, 255);
 	uiElement[i].textColorHover = color(0, 255, 255);
 	uiElement[i].addRef(REF_UI_BUTTON);
+	uiElement[i].addRef(REF_UI_CIV);
 	uiElement[i].button.action = "noAction";
 	i += 1;
 

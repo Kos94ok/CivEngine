@@ -57,20 +57,20 @@ void cScript::civ_endTurn(cArg args)
 
 void cScript::ui_showMainScreen(cArg args)
 {
-	ui.removeElementsByRef(-1);
+	ui.removeElementsByRef(REF_UI_CIV);
 
 	int gold = tempGold;
 	int lumber = tempLumber;
 	string text = "Золото: " + to_string(gold);
-	ui.createText(vec2f(0.00f, 0.00), text, "Это как бабло, только золото");
+	ui.createText(vec2f(0.00f, 0.00), text, "Это как бабло, только золото", REF_UI_CIV);
 	text = "Дерево: " + to_string(lumber);
-	ui.createText(vec2f(0.00f, 16.00), text, "Деревяшки.");
+	ui.createText(vec2f(0.00f, 16.00), text, "Деревяшки.", REF_UI_CIV);
 	text = "Население: " + to_string(humanTotal) + " (" + to_string(getFreePeople()) + ")";
-	ui.createText(vec2f(0.00f, 32.00), text, "ПИПЛЗЫ.");
+	ui.createText(vec2f(0.00f, 32.00), text, "ПИПЛЗЫ.", REF_UI_CIV);
 
 
 	text = "Копатели: " + to_string(miners) + " / " + to_string(humanTotal);
-	ui.createText(vec2f(0, 90), text);
+	ui.createText(vec2f(0, 90), text, "", REF_UI_CIV);
 
 	ui.addElement("civ_btn", vec2f(16, 150));
 	ui.getLast()->size = vec2f(32, 32);
@@ -84,7 +84,7 @@ void cScript::ui_showMainScreen(cArg args)
 	ui.getLast()->textFont = FONT_DESCR;
 
 	text = "Рубители: " + to_string(woodcutters) + " / " + to_string(humanTotal);
-	ui.createText(vec2f(300, 90), text);
+	ui.createText(vec2f(300, 90), text, "", REF_UI_CIV);
 
 	ui.addElement("civ_btn", vec2f(316, 150));
 	ui.getLast()->size = vec2f(32, 32);

@@ -157,6 +157,7 @@ extern const std::string NAME_BUILDTIME_TIME;
 #define REF_UI_OVERWORLD_MAP			22		// Object is a part of the overworld map
 #define REF_UI_GAMEPLAY					23		// Object is a part of gameplay ui
 #define REF_UI_MOUSEWHEELSCROLL			24		// Object is a mouse wheel scroll indicator
+#define REF_UI_CIV						25		// Object is part of a new civ ui
 #define REF_UI_ACTIVEITEM				50		// Object is one of the active equipped item buttons [50...85]
 #define REF_UNIT_PICKUP					0		// Unit can be picked up as an item
 #define REF_UNIT_HARVESTABLE			1		// Unit can be harvested for the resource
