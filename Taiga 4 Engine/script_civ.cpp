@@ -54,10 +54,44 @@ void cScript::civ_endTurn(cArg args)
 	tempGold += 5 * miners;
 	tempLumber += 5 * woodcutters;
 
-	// бяе окнун
-	if (math.randf(0.00f, 1.00f) < 0.10f) {
-		killHuman(math.rand(1, 3), WORK_RANDOM);
-		chat.log << "бяе окнун!" << endl;
+	// New children
+	int freePeople = getFreePeople();
+	if (freePeople >= 2) {
+		int count = math.round(freePeople * math.randf(0.05f, 0.20f));
+		if (count > 0) {
+			chat.log << "Children in the village: +" << count << endl;
+			humanTotal += count;
+		}
+	}
+	// Something bad
+	if (math.randf(0.00f, 1.00f) < 0.20f) {
+		int dead;
+		int val = math.randf(0.00f, 1.00f);
+		// Plague
+		if (val <= 0.10f) {
+			dead = humanTotal * math.randf(0.10f, 0.30f);
+			killHuman(dead, WORK_RANDOM);
+			chat.log << "The plague has taken " << dead << " lives..." << endl;
+		}
+		// Rockfall
+		else if (val <= 0.40f) {
+			dead = min((int)(miners * math.randf(0.10f, 0.20f) + math.rand(1, 5)), miners);
+			killHuman(dead, WORK_MINER);
+			if (miners > 0) { chat.log << "There was a big rockfall in the mines! We have lost " << dead << " lives!" << endl; }
+			else { chat.log << "There was a big rockfall in the mines! Thankfully, there was nobody in the mines." << endl; }
+		}
+		// Small raid
+		else if (val <= 0.70f && humanTotal > 15) {
+			dead = math.rand(0, humanTotal - 10);
+			killHuman(dead, WORK_RANDOM);
+			chat.log << "Some idiots just raided a village. We have lost " << dead << " good guys." << endl;
+		}
+		// Big raid
+		else {
+			dead = math.rand(math.rand(3, 15), math.rand(humanTotal - 10, humanTotal));
+			killHuman(dead, WORK_RANDOM);
+			chat.log << "That was a huge attack. We have lost " << dead << " people." << endl;
+		}
 	}
 }
 
@@ -124,12 +158,6 @@ void cScript::ui_showMainScreen(cArg args)
 	/*ui.addElement("civ_btn", vec2f(100, 200));
 	ui.getLast()->button.action = "civ_addHuman";
 	ui.getLast()->setText("Create Human");*/
-
-
-
-
-
-
 
 
 }
