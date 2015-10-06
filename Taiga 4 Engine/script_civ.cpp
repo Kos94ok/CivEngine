@@ -40,6 +40,7 @@ void cScript::civ_callback(cUIButton* btn, int parent)
 	else if (btn->action == "civ_remMiner") { civ_remMiner(0); }
 	else if (btn->action == "civ_addCutter") { civ_addCutter(0); }
 	else if (btn->action == "civ_remCutter") { civ_remCutter(0); }
+	else if (btn->action == "civ_addHuman") { civ_addHuman(0); }
 	script.ui_showMainScreen(0);
 }
 
@@ -102,8 +103,9 @@ void cScript::ui_showMainScreen(cArg args)
 	ui.getLast()->button.action = "civ_endTurn";
 	ui.getLast()->setText("Закончить ход");
 
-
-
+	ui.addElement("civ_btn", vec2f(0, 200));
+	ui.getLast()->button.action = "civ_addHuman";
+	ui.getLast()->setText("Born human");
 
 
 
@@ -140,4 +142,9 @@ void cScript::civ_remCutter(cArg args)
 	if (woodcutters > 0) {
 		woodcutters -= 1;
 	}
+}
+
+void cScript::civ_addHuman(cArg args)
+{
+	humanTotal++;
 }
