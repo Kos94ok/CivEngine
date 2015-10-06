@@ -14,7 +14,9 @@ int tempLumber = 0;
 int humanTotal = 10;
 int miners = 0;
 int woodcutters = 0;
-int justTestVariable = 0;
+
+int upgGoldmine = 0;
+int upgLumbermill = 0;
 
 int getFreePeople() {
 	return humanTotal - miners - woodcutters;
@@ -63,54 +65,60 @@ void cScript::ui_showMainScreen(cArg args)
 
 	int gold = tempGold;
 	int lumber = tempLumber;
-	string text = "Золото: " + to_string(gold);
-	ui.createText(vec2f(0.00f, 0.00), text, "Это как бабло, только золото", REF_UI_CIV);
-	text = "Дерево: " + to_string(lumber);
-	ui.createText(vec2f(0.00f, 16.00), text, "Деревяшки.", REF_UI_CIV);
-	text = "Население: " + to_string(humanTotal) + " (" + to_string(getFreePeople()) + ")";
-	ui.createText(vec2f(0.00f, 32.00), text, "ПИПЛЗЫ.", REF_UI_CIV);
 
+	// Information window
+	vec2f winPos = vec2f(0, 0);
+	string text = "Gold: " + to_string(gold);
+	ui.createText(winPos + vec2f(0.00, 0.00), text, "", REF_UI_CIV);
+	text = "Lumber: " + to_string(lumber);
+	ui.createText(winPos + vec2f(0.00f, 16.00), text, "", REF_UI_CIV);
+	text = "Population: " + to_string(humanTotal) + " (" + to_string(getFreePeople()) + ")";
+	ui.createText(winPos + vec2f(0.00f, 32.00), text, "", REF_UI_CIV);
 
-	text = "Копатели: " + to_string(miners) + " / " + to_string(humanTotal);
-	ui.createText(vec2f(0, 90), text, "", REF_UI_CIV);
+	
+	// Population control window
+	winPos = vec2f(100, 170);
+	text = "Working:";
+	ui.createText(winPos + vec2f(10, 0), text, "", REF_UI_CIV);
 
-	ui.addElement("civ_btn", vec2f(16, 150));
+	text = "Mine: " + to_string(miners) + " / " + to_string(humanTotal);
+	ui.createText(winPos + vec2f(0, 20), text, "", REF_UI_CIV);
+
+	ui.addElement("civ_btn", winPos + vec2f(16, 80));
 	ui.getLast()->size = vec2f(32, 32);
 	ui.getLast()->button.action = "civ_addMiner";
 	ui.getLast()->setText("+");
 	ui.getLast()->textFont = FONT_DESCR;
 
-	ui.addElement(*ui.getLast(), vec2f(50, 150));
+	ui.addElement(*ui.getLast(), winPos + vec2f(50, 80));
 	ui.getLast()->button.action = "civ_remMiner";
 	ui.getLast()->setText("-");
 	ui.getLast()->textFont = FONT_DESCR;
 
-	text = "Рубители: " + to_string(woodcutters) + " / " + to_string(humanTotal);
-	ui.createText(vec2f(300, 90), text, "", REF_UI_CIV);
+	text = "Lumbermill: " + to_string(woodcutters) + " / " + to_string(humanTotal);
+	ui.createText(winPos + vec2f(300, 20), text, "", REF_UI_CIV);
 
-	ui.addElement("civ_btn", vec2f(316, 150));
+	ui.addElement("civ_btn", winPos + vec2f(316, 80));
 	ui.getLast()->size = vec2f(32, 32);
 	ui.getLast()->button.action = "civ_addCutter";
 	ui.getLast()->setText("+");
 	ui.getLast()->textFont = FONT_DESCR;
 
-	ui.addElement(*ui.getLast(), vec2f(350, 150));
+	ui.addElement(*ui.getLast(), winPos + vec2f(350, 80));
 	ui.getLast()->button.action = "civ_remCutter";
 	ui.getLast()->setText("-");
 	ui.getLast()->textFont = FONT_DESCR;
 
 
-	ui.addElement("civ_btn", vec2f(300.00f, 300.00f));
+	// Final buttons window
+	winPos = vec2f(100, 300);
+	ui.addElement("civ_btn", winPos + vec2f(0.00f, 0.00f));
 	ui.getLast()->button.action = "civ_endTurn";
-	ui.getLast()->setText("????????? ???");
+	ui.getLast()->setText("End Turn");
 
-	ui.addElement("civ_btn", vec2f(500.00f, 300.00f));
-	ui.getLast()->button.action = "civ_endTurn";
-	ui.getLast()->setText("Новый батон!");
-
-	ui.addElement("civ_btn", vec2f(0, 200));
+	/*ui.addElement("civ_btn", vec2f(0, 300));
 	ui.getLast()->button.action = "civ_addHuman";
-	ui.getLast()->setText("Born human");
+	ui.getLast()->setText("Create Human");*/
 
 
 
