@@ -34,6 +34,16 @@ void killHuman(int count, int type) {
 			else if (val == 2 && getFreePeople() > 0) { humanTotal -= 1; humansKilled += 1; }
 		} while (humansKilled < count && humanTotal > 0);
 	}
+	else if (type == WORK_MINER) {
+		humansKilled = min(count, miners);
+		miners -= humansKilled;
+		humanTotal -= humansKilled;
+	}
+	else if (type == WORK_CUTTER) {
+		humansKilled = min(count, woodcutters);
+		woodcutters -= humansKilled;
+		humanTotal -= humansKilled;
+	}
 }
 
 
@@ -61,12 +71,17 @@ void cScript::civ_endTurn(cArg args)
 		if (count > 0) {
 			chat.log << "Children in the village: +" << count << endl;
 			humanTotal += count;
+			if (humanTotal > humanLimit) {
+				int dif = humanTotal - humanLimit;
+				humanTotal = humanLimit;
+				chat.log << "WE HAVE KILLED " << dif << " CHILDREN" << endl;
+			}
 		}
 	}
 	// Something bad
 	if (math.randf(0.00f, 1.00f) < 0.20f) {
 		int dead;
-		int val = math.randf(0.00f, 1.00f);
+		float val = math.randf(0.00f, 1.00f);
 		// Plague
 		if (val <= 0.10f) {
 			dead = humanTotal * math.randf(0.10f, 0.30f);
@@ -75,19 +90,19 @@ void cScript::civ_endTurn(cArg args)
 		}
 		// Rockfall
 		else if (val <= 0.40f) {
-			dead = min((int)(miners * math.randf(0.10f, 0.20f) + math.rand(1, 5)), miners);
+			dead = max(1, min((int)(miners * math.randf(0.10f, 0.20f) + math.rand(1, 5)), miners));
 			killHuman(dead, WORK_MINER);
 			if (miners > 0) { chat.log << "There was a big rockfall in the mines! We have lost " << dead << " lives!" << endl; }
 			else { chat.log << "There was a big rockfall in the mines! Thankfully, there was nobody in the mines." << endl; }
 		}
 		// Small raid
-		else if (val <= 0.70f && humanTotal > 15) {
+		else if (val <= 0.70f && humanTotal > 25) {
 			dead = math.rand(0, humanTotal - 10);
 			killHuman(dead, WORK_RANDOM);
 			chat.log << "Some idiots just raided a village. We have lost " << dead << " good guys." << endl;
 		}
 		// Big raid
-		else {
+		else if (humanTotal > 100) {
 			dead = math.rand(math.rand(3, 15), math.rand(humanTotal - 10, humanTotal));
 			killHuman(dead, WORK_RANDOM);
 			chat.log << "That was a huge attack. We have lost " << dead << " people." << endl;
@@ -108,7 +123,7 @@ void cScript::ui_showMainScreen(cArg args)
 	ui.createText(winPos + vec2f(0.00, 0.00), text, "", REF_UI_CIV);
 	text = "Lumber: " + to_string(lumber);
 	ui.createText(winPos + vec2f(0.00f, 16.00), text, "", REF_UI_CIV);
-	text = "Population: " + to_string(humanTotal) + " (" + to_string(humanLimit) + ")";
+	text = "Population: " + to_string(humanTotal) + " (" + to_string(getFreePeople()) + ")" + " / " + to_string(humanLimit);
 	ui.createText(winPos + vec2f(0.00f, 32.00), text, "", REF_UI_CIV);
 
 	
@@ -145,9 +160,12 @@ void cScript::ui_showMainScreen(cArg args)
 	ui.getLast()->setText("-");
 	ui.getLast()->textFont = FONT_DESCR;
 
-	ui.addElement("civ_btn", winPos + vec2f(150, 40));
+	// Building buttons
+	winPos = vec2f(0, 700);
+	ui.addElement("civ_btn", winPos + vec2f(64, 32));
 	ui.getLast()->button.action = "civ_buildHouse";
-	ui.getLast()->setText("Build house (limit + 20)");
+	ui.getLast()->tooltip.setText("Human limit +20, costs 100/50");
+	ui.getLast()->setText("Build House");
 
 	// Final buttons window
 	winPos = vec2f(100, 300);
