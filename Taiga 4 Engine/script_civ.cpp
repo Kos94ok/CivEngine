@@ -12,7 +12,7 @@
 int tempGold = 0;
 int tempLumber = 0;
 int humanTotal = 10;
-int humanLimit = 100;
+int humanLimit = 20;
 int miners = 0;
 int woodcutters = 0;
 
@@ -45,6 +45,7 @@ void cScript::civ_callback(cUIButton* btn, int parent)
 	else if (btn->action == "civ_addCutter") { civ_addCutter(0); }
 	else if (btn->action == "civ_remCutter") { civ_remCutter(0); }
 	else if (btn->action == "civ_addHuman") { civ_addHuman(1, 0); }
+	else if (btn->action == "civ_buildHouse") { civ_buildHouse(0); }
 	script.ui_showMainScreen(0);
 }
 
@@ -73,7 +74,7 @@ void cScript::ui_showMainScreen(cArg args)
 	ui.createText(winPos + vec2f(0.00, 0.00), text, "", REF_UI_CIV);
 	text = "Lumber: " + to_string(lumber);
 	ui.createText(winPos + vec2f(0.00f, 16.00), text, "", REF_UI_CIV);
-	text = "Population: " + to_string(humanTotal) + " (" + to_string(getFreePeople()) + ")";
+	text = "Population: " + to_string(humanTotal) + " (" + to_string(humanLimit) + ")";
 	ui.createText(winPos + vec2f(0.00f, 32.00), text, "", REF_UI_CIV);
 
 	
@@ -110,6 +111,9 @@ void cScript::ui_showMainScreen(cArg args)
 	ui.getLast()->setText("-");
 	ui.getLast()->textFont = FONT_DESCR;
 
+	ui.addElement("civ_btn", winPos + vec2f(150, 40));
+	ui.getLast()->button.action = "civ_buildHouse";
+	ui.getLast()->setText("Build house (limit + 20)");
 
 	// Final buttons window
 	winPos = vec2f(100, 300);
@@ -117,8 +121,7 @@ void cScript::ui_showMainScreen(cArg args)
 	ui.getLast()->button.action = "civ_endTurn";
 	ui.getLast()->setText("End Turn");
 
-	/*ui.addElement("civ_btn", vec2f(0, 300));
-	ui.addElement("civ_btn", vec2f(64, 200));
+	/*ui.addElement("civ_btn", vec2f(100, 200));
 	ui.getLast()->button.action = "civ_addHuman";
 	ui.getLast()->setText("Create Human");*/
 
@@ -166,5 +169,15 @@ void cScript::civ_addHuman(int amount, cArg args)
 	{
 		humanTotal = humanLimit;
 		console << "You have reached the limit";
+	}
+}
+
+void cScript::civ_buildHouse(cArg args)
+{
+	if (tempGold >= 100 && tempLumber >= 50)
+	{
+		tempGold -= 100;
+		tempLumber -= 50;
+		humanLimit += 20;
 	}
 }
