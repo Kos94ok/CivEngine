@@ -14,6 +14,7 @@ int tempLumber = 0;
 int humanTotal = 10;
 int miners = 0;
 int woodcutters = 0;
+int justTestVariable = 0;
 
 int getFreePeople() {
 	return humanTotal - miners - woodcutters;
