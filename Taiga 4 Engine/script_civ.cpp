@@ -12,6 +12,7 @@
 int tempGold = 0;
 int tempLumber = 0;
 int humanTotal = 10;
+int humanLimit = 100;
 int miners = 0;
 int woodcutters = 0;
 
@@ -161,4 +162,9 @@ void cScript::civ_remCutter(cArg args)
 void cScript::civ_addHuman(int amount, cArg args)
 {
 	humanTotal += amount;
+	if (humanTotal > humanLimit)
+	{
+		humanTotal = humanLimit;
+		console << "You have reached the limit";
+	}
 }
