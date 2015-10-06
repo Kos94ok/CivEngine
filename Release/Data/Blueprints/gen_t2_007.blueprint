@@ -1,0 +1,212 @@
+Type: 2
+[Units]
+ID: -1
+Type: bg_snow_c
+X: 0
+Y: 0
+===
+ID: -1
+Type: tree_fir_c
+X: 150
+Y: -90
+===
+ID: -1
+Type: tree_basic_b
+X: 147
+Y: 94
+===
+ID: -1
+Type: tree_fir_a
+X: -169
+Y: -206
+===
+ID: -1
+Type: tree_fir_c
+X: -225
+Y: -94
+===
+ID: -1
+Type: stone_basic_c
+X: 46
+Y: 52
+===
+ID: -1
+Type: tree_fir_b
+X: -102
+Y: -80
+===
+ID: -1
+Type: stone_basic_c
+X: -171
+Y: 106
+===
+ID: -1
+Type: tree_fir_c
+X: 250
+Y: -89
+===
+ID: -1
+Type: tree_basic_d
+X: 192
+Y: 18
+===
+ID: -1
+Type: tree_fir_c
+X: 39
+Y: 23
+===
+ID: -1
+Type: tree_fir_b
+X: 132
+Y: 107
+===
+ID: -1
+Type: tree_basic_b
+X: 201
+Y: 85
+===
+ID: -1
+Type: tree_fir_a
+X: -51
+Y: -136
+===
+ID: -1
+Type: tree_basic_c
+X: -39
+Y: 200
+===
+ID: -1
+Type: tree_fir_c
+X: -223
+Y: 242
+===
+ID: -1
+Type: stone_basic_d
+X: 138
+Y: 183
+===
+ID: -1
+Type: stone_basic_c
+X: -62
+Y: -184
+===
+ID: -1
+Type: stone_basic_b
+X: 242
+Y: 188
+===
+ID: -1
+Type: stone_basic_a
+X: -106
+Y: -58
+===
+ID: -1
+Type: tree_fir_a
+X: -87
+Y: 235
+===
+ID: -1
+Type: tree_basic_c
+X: 144
+Y: 170
+===
+ID: -1
+Type: stone_basic_b
+X: -89
+Y: -239
+===
+ID: -1
+Type: tree_basic_a
+X: 93
+Y: 100
+===
+ID: -1
+Type: stone_basic_c
+X: 94
+Y: -63
+===
+ID: -1
+Type: tree_fir_a
+X: 158
+Y: -13
+===
+ID: -1
+Type: tree_basic_b
+X: -204
+Y: -195
+===
+ID: -1
+Type: tree_basic_b
+X: -214
+Y: -103
+===
+ID: -1
+Type: stone_basic_d
+X: 192
+Y: -65
+===
+ID: -1
+Type: tree_fir_b
+X: 210
+Y: 17
+===
+ID: -1
+Type: tree_basic_c
+X: -194
+Y: 241
+===
+ID: -1
+Type: tree_fir_c
+X: 205
+Y: 75
+===
+ID: -1
+Type: stone_basic_d
+X: 187
+Y: -1
+===
+ID: -1
+Type: tree_fir_c
+X: -137
+Y: 73
+===
+ID: -1
+Type: tree_fir_d
+X: 187
+Y: -37
+===
+ID: -1
+Type: stone_basic_c
+X: 133
+Y: -45
+===
+ID: -1
+Type: stone_basic_d
+X: 57
+Y: -128
+===
+ID: -1
+Type: tree_fir_b
+X: 28
+Y: -207
+===
+ID: -1
+Type: tree_fir_b
+X: 127
+Y: 156
+===
+ID: -1
+Type: stone_basic_c
+X: 108
+Y: -186
+===
+ID: -1
+Type: stone_basic_a
+X: -231
+Y: -211
+===
+ID: -1
+Type: tree_fir_d
+X: 183
+Y: 12
+===

@@ -1,0 +1,8 @@
+//cmd_activeType = UNIT
+//cmd_activeObject = stone_basic_a
+//size_x = 110
+//size_y = 100
+//center_x = 60
+//center_y = 70
+//shadow_y = -15
+//collision_distance = 35

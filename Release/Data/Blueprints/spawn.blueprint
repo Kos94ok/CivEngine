@@ -1,0 +1,17 @@
+Type: 3
+[Units]
+ID: -1
+Type: campfire_full
+X: 50
+Y: 0
+===
+ID: -1
+Type: tent_basic
+X: 100
+Y: -40
+===
+ID: -1
+Type: bg_snow_b
+X: 0
+Y: 0
+===

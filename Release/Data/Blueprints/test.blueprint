@@ -1,0 +1,47 @@
+Type: 4
+[Units]
+ID: -1
+Type: tree_basic_a
+X: 7
+Y: 138
+===
+ID: -1
+Type: tree_basic_b
+X: 200
+Y: 18
+===
+ID: -1
+Type: tree_basic_b
+X: 105
+Y: -89
+===
+ID: -1
+Type: tree_basic_c
+X: -78
+Y: -136
+===
+ID: -1
+Type: tree_basic_c
+X: -206
+Y: -166
+===
+ID: -1
+Type: tree_basic_d
+X: -178
+Y: -60
+===
+ID: -1
+Type: tree_basic_d
+X: -164
+Y: 52
+===
+ID: -1
+Type: campfire_full
+X: -44
+Y: -49
+===
+ID: -1
+Type: bg_snow_c
+X: 0
+Y: 0
+===

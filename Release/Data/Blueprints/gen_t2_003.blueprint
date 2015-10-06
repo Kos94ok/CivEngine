@@ -1,0 +1,217 @@
+Type: 2
+[Units]
+ID: -1
+Type: bg_snow_c
+X: 0
+Y: 0
+===
+ID: -1
+Type: stone_basic_d
+X: 250
+Y: 192
+===
+ID: -1
+Type: tree_basic_d
+X: -25
+Y: -15
+===
+ID: -1
+Type: tree_fir_a
+X: 242
+Y: 239
+===
+ID: -1
+Type: stone_basic_a
+X: -144
+Y: -195
+===
+ID: -1
+Type: stone_basic_b
+X: 71
+Y: -22
+===
+ID: -1
+Type: tree_basic_a
+X: 66
+Y: -218
+===
+ID: -1
+Type: stone_basic_c
+X: 181
+Y: 117
+===
+ID: -1
+Type: tree_basic_a
+X: -246
+Y: 62
+===
+ID: -1
+Type: tree_basic_b
+X: -94
+Y: -217
+===
+ID: -1
+Type: stone_basic_c
+X: 229
+Y: -218
+===
+ID: -1
+Type: tree_basic_c
+X: 154
+Y: 21
+===
+ID: -1
+Type: stone_basic_a
+X: 62
+Y: 164
+===
+ID: -1
+Type: tree_basic_c
+X: -193
+Y: 231
+===
+ID: -1
+Type: tree_basic_b
+X: -244
+Y: -23
+===
+ID: -1
+Type: stone_basic_c
+X: -122
+Y: -110
+===
+ID: -1
+Type: tree_basic_a
+X: 14
+Y: 76
+===
+ID: -1
+Type: tree_fir_a
+X: -12
+Y: -238
+===
+ID: -1
+Type: tree_fir_c
+X: -138
+Y: 146
+===
+ID: -1
+Type: stone_basic_d
+X: -159
+Y: 72
+===
+ID: -1
+Type: tree_basic_c
+X: -2
+Y: -107
+===
+ID: -1
+Type: tree_basic_b
+X: -132
+Y: -36
+===
+ID: -1
+Type: tree_basic_d
+X: -150
+Y: 64
+===
+ID: -1
+Type: tree_basic_a
+X: -125
+Y: -7
+===
+ID: -1
+Type: tree_basic_d
+X: 13
+Y: 126
+===
+ID: -1
+Type: tree_basic_a
+X: -241
+Y: 36
+===
+ID: -1
+Type: stone_basic_b
+X: -86
+Y: 7
+===
+ID: -1
+Type: tree_basic_a
+X: -178
+Y: -218
+===
+ID: -1
+Type: tree_fir_c
+X: 52
+Y: -151
+===
+ID: -1
+Type: stone_basic_b
+X: -95
+Y: 131
+===
+ID: -1
+Type: tree_basic_b
+X: 231
+Y: -8
+===
+ID: -1
+Type: stone_basic_b
+X: 117
+Y: -231
+===
+ID: -1
+Type: tree_basic_a
+X: 181
+Y: -227
+===
+ID: -1
+Type: tree_fir_c
+X: -184
+Y: 90
+===
+ID: -1
+Type: tree_basic_c
+X: 224
+Y: -38
+===
+ID: -1
+Type: tree_basic_b
+X: -127
+Y: -24
+===
+ID: -1
+Type: tree_fir_a
+X: -166
+Y: 88
+===
+ID: -1
+Type: tree_fir_c
+X: 116
+Y: -141
+===
+ID: -1
+Type: tree_fir_a
+X: 138
+Y: -138
+===
+ID: -1
+Type: tree_fir_d
+X: -218
+Y: 3
+===
+ID: -1
+Type: stone_basic_c
+X: 79
+Y: 142
+===
+ID: -1
+Type: tree_basic_d
+X: -155
+Y: 66
+===
+ID: -1
+Type: tree_basic_c
+X: -184
+Y: -181
+===
