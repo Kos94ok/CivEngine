@@ -245,3 +245,7 @@ Taiga 4 Engine/Taiga 4 Engine.vcxproj
 Release/taiga.iobj
 *.vcxproj
 Taiga 4 Engine/Taiga 4 Engine.vcxproj
+Taiga 4 Engine/Taiga 4 Engine.vcxproj
+*.vcxproj
+Release/taiga.exe
+*.exe
