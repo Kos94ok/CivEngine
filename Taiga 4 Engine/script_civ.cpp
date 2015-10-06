@@ -43,7 +43,7 @@ void cScript::civ_callback(cUIButton* btn, int parent)
 	else if (btn->action == "civ_remMiner") { civ_remMiner(0); }
 	else if (btn->action == "civ_addCutter") { civ_addCutter(0); }
 	else if (btn->action == "civ_remCutter") { civ_remCutter(0); }
-	else if (btn->action == "civ_addHuman") { civ_addHuman(0); }
+	else if (btn->action == "civ_addHuman") { civ_addHuman(1, 0); }
 	script.ui_showMainScreen(0);
 }
 
@@ -117,6 +117,7 @@ void cScript::ui_showMainScreen(cArg args)
 	ui.getLast()->setText("End Turn");
 
 	/*ui.addElement("civ_btn", vec2f(0, 300));
+	ui.addElement("civ_btn", vec2f(64, 200));
 	ui.getLast()->button.action = "civ_addHuman";
 	ui.getLast()->setText("Create Human");*/
 
@@ -157,7 +158,7 @@ void cScript::civ_remCutter(cArg args)
 	}
 }
 
-void cScript::civ_addHuman(cArg args)
+void cScript::civ_addHuman(int amount, cArg args)
 {
-	humanTotal++;
+	humanTotal += amount;
 }

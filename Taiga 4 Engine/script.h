@@ -46,7 +46,7 @@ public:
 	static void civ_remMiner(cArg args);
 	static void civ_addCutter(cArg args);
 	static void civ_remCutter(cArg args);
-	static void civ_addHuman(cArg args);
+	static void civ_addHuman(int amount, cArg args);
 	static void civ_callback(cUIButton* btn, int parent);
 	static void ui_showMainScreen(cArg args);
 };
