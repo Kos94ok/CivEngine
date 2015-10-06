@@ -28,7 +28,7 @@ void killHuman(int count, int type) {
 			if (val == 0 && miners > 0) { humanTotal -= 1; miners -= 1; humansKilled += 1; }
 			else if (val == 1 && woodcutters > 0) { humanTotal -= 1; woodcutters -= 1; humansKilled += 1; }
 			else if (val == 2 && getFreePeople() > 0) { humanTotal -= 1; humansKilled += 1; }
-		} while (humansKilled < count);
+		} while (humansKilled < count && humanTotal > 0);
 	}
 }
 
