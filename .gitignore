@@ -240,3 +240,8 @@ $RECYCLE.BIN/
 *.vcxproj
 Release/settings.ini
 Taiga 4 Engine/Taiga 4 Engine.vcxproj
+Taiga 4 Engine/Taiga 4 Engine.vcxproj
+*.ipdb
+Release/taiga.iobj
+*.vcxproj
+Taiga 4 Engine/Taiga 4 Engine.vcxproj
